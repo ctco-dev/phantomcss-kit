@@ -38,11 +38,13 @@ casper.test.begin( 'Visual tests', function (test) {
   casper.start('http://localhost:' + port + '/' + pageUrl);
 
   casper.viewport( 1280, 1024 );
-  casper.wait(wait, function() {
-    this.getElementsInfo('.test').forEach(function(elemInfo) {
-      phantomcss.screenshot('#' + elemInfo.attributes.id, elemInfo.attributes.id);
-    });
-  });
+
+  if (wait > 0) {
+    casper.wait(wait, takeScreenshots);
+  }
+  else {
+    casper.then(takeScreenshots);
+  }
 
   casper.then( function now_check_the_screenshots() {
     // compare screenshots
@@ -57,3 +59,9 @@ casper.test.begin( 'Visual tests', function (test) {
     casper.test.done();
   });
 });
+
+function takeScreenshots() {
+  this.getElementsInfo('.test').forEach(function(elemInfo) {
+    phantomcss.screenshot('#' + elemInfo.attributes.id, elemInfo.attributes.id);
+  });
+}
