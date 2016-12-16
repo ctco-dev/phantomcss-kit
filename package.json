@@ -7,7 +7,8 @@
     "pk-test": "bin/run.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release-patch": "npm version patch && git push --tags && npm publish",
+    "release-minor": "npm version patch && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
