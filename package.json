@@ -8,7 +8,7 @@
   },
   "scripts": {
     "release-patch": "npm version patch && git push --tags && npm publish",
-    "release-minor": "npm version patch && git push --tags && npm publish"
+    "release-minor": "npm version minor && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
