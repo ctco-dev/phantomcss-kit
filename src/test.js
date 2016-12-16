@@ -61,8 +61,8 @@ casper.test.begin('Visual tests', function () {
 });
 
 function takeScreenshots() {
-  this.getElementsInfo('.test').forEach(function(elemInfo) {
-    phantomcss.screenshot('#' + elemInfo.attributes.id, elemInfo.attributes.id);
+  this.getElementsInfo('[pk-test]').forEach(function(elemInfo) {
+    phantomcss.screenshot('#' + elemInfo.attributes['pk-test'], elemInfo.attributes['pk-test']);
   });
 }
 
