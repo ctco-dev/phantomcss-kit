@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .tag {
+        color: #fff;
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        width: 500px;
+      }
+
+      .tag-first {
+        background: lightcoral;
+      }
+
+      .tag-wait {
+        background: lightskyblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tag tag-first" pk-test="first">
+      <p>The moving finger writes, and having written moves on.</p>
+      <p>Nor all thy piety nor all thy wit, can cancel half a line of it.</p>
+    </div>
+  </body>
+
+  <script>
+    setTimeout(function() {
+      document.body.innerHTML += '<div class="tag tag-wait" pk-test="wait"><p>Dead yesterdays and unborn tomorrows, why fret about it, if today be sweet.<p></div>';
+    }, 500);
+  </script>
+</html>

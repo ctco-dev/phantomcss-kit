@@ -62,7 +62,7 @@ casper.test.begin('Visual tests', function () {
 
 function takeScreenshots() {
   this.getElementsInfo('[pk-test]').forEach(function(elemInfo) {
-    phantomcss.screenshot('#' + elemInfo.attributes['pk-test'], elemInfo.attributes['pk-test']);
+    phantomcss.screenshot('[pk-test="' + elemInfo.attributes['pk-test'] + '"]', elemInfo.attributes['pk-test']);
   });
 }
 

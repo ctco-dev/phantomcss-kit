@@ -7,6 +7,13 @@
     "pk-test": "bin/run.js"
   },
   "scripts": {
+    "test": "npm run test-serve && npm run test-serve-port && npm run test-serve-wait",
+    "test-serve": "node bin/run.js --serveDir=test --url=index.html",
+    "test-serve-port": "node bin/run.js --serveDir=test --url=index.html --port=3333",
+    "test-serve-wait": "node bin/run.js --serveDir=test --url=index.html --wait=1000",
+
+    "rebase": "npm run test-serve -- --rebase --wait=1000",
+
     "release-patch": "npm version patch && git push --tags && npm publish",
     "release-minor": "npm version minor && git push --tags && npm publish"
   },
