@@ -1,6 +1,6 @@
 {
   "name": "phantomcss-kit",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A quick way to set up visual regression testing with PhantomCSS",
   "main": "index.js",
   "bin": {
@@ -11,9 +11,7 @@
     "test-serve": "node bin/run.js --serveDir=test --url=http://localhost:3010/index.html",
     "test-serve-port": "node bin/run.js --serveDir=test --url=http://localhost:3333/index.html --port=3333",
     "test-serve-wait": "node bin/run.js --serveDir=test --url=http://localhost:3010/index.html --wait=1000",
-
     "rebase": "npm run test-serve -- --rebase --wait=1000",
-
     "release-patch": "npm version patch && git push --tags && npm publish",
     "release-minor": "npm version minor && git push --tags && npm publish"
   },
