@@ -36,7 +36,7 @@ casper.test.begin('Visual tests', function () {
     addIteratorToImage: false,
   });
 
-  casper.start('http://localhost:' + port + '/' + pageUrl);
+  casper.start(pageUrl);
 
   casper.viewport(1280, 1024);
 
