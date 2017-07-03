@@ -6,25 +6,11 @@
 
 var phantomcss = require('phantomcss');
 
-var server = require('webserver').create();
-
-var serveDir = casper.cli.get('serveDir');
 var pageUrl = casper.cli.get('url');
 var rebase = casper.cli.get('rebase');
 var tolerance = casper.cli.get('tolerance');
 var wait = casper.cli.get('wait') || 0;
-var port = casper.cli.get('port') || 3010;
 
-if (serveDir) {
-  server.listen(port, function(req, res) {
-    var url = parseUrl(req.url).pathname;
-    var content = fs.read(fs.absolute(serveDir + url));
-
-    res.statusCode = 200;
-    res.write(content);
-    res.close();
-  });
-}
 
 casper.test.begin('Visual tests', function () {
   phantomcss.init({
@@ -64,10 +50,4 @@ function takeScreenshots() {
   this.getElementsInfo('[pk-test]').forEach(function(elemInfo) {
     phantomcss.screenshot('[pk-test="' + elemInfo.attributes['pk-test'] + '"]', elemInfo.attributes['pk-test']);
   });
-}
-
-function parseUrl(href) {
-  var l = document.createElement('a');
-  l.href = href;
-  return l;
 }
