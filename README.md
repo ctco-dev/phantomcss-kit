@@ -1,5 +1,7 @@
 # phantomcss-kit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ctco-dev/phantomcss-kit.svg)](https://greenkeeper.io/)
+
 This NPM utility library provides a quick way to run a pre-defined PhantomCSS test suite against your web page.
 
 ## Requirements
