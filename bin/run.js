@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 const exec = require('child_process').exec;
 const httpServer = require('http-server');
 const yargs = require('yargs');
