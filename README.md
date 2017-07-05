@@ -1,5 +1,7 @@
 # phantomcss-kit
 
+[![Build Status](https://travis-ci.org/ctco-dev/phantomcss-kit.svg?branch=master)](https://travis-ci.org/ctco-dev/phantomcss-kit)
+
 This NPM utility library provides a quick way to run a pre-defined PhantomCSS test suite against your web page.
 
 ## Requirements

@@ -1,0 +1,21 @@
+language: node_js
+env:
+  CI=true
+node_js:
+  - 4
+  - 6
+  - 7
+  - 8
+
+before_install:
+- npm install -g greenkeeper-lockfile@1
+
+before_script: greenkeeper-lockfile-update
+
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+
+after_script: greenkeeper-lockfile-upload
